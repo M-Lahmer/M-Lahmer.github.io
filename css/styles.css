@@ -1,19 +1,214 @@
- .image-container {
-     width: 200px;
-     /* Predefined width */
-     height: 150px;
-     /* Predefined height */
-     overflow: hidden;
-     /* Hide overflow if the image doesn't fit perfectly */
-     display: flex;
-     justify-content: left;
-     align-items: left;
-     /*border: 2px solid #ccc;*/
- }
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --primary: #1d4ed8;
+    --primary-dark: #1e40af;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
 
- .image-container img {
-     max-width: 100%;
-     max-height: 100%;
-     object-fit: cover;
-     /* Ensures the image fills the container proportionally */
- }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.site-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.hero {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+}
+
+.image-container {
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #eef2ff;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin: 0.35rem 0 0.65rem;
+}
+
+.section {
+    margin-top: 1.25rem;
+}
+
+.section-title {
+    font-size: 1.12rem;
+    margin-bottom: 0.75rem;
+}
+
+.list-clean {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.pill-link {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+    background: #eff6ff;
+    font-weight: 600;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.7rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    display: block;
+    max-width: 180px;
+    width: 100%;
+    margin: 0 auto 1rem;
+}
+
+.course-title {
+    text-align: center;
+    color: #9f1239;
+    margin: 0 0 1rem;
+}
+
+.courses-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.courses-list a {
+    display: block;
+    padding: 0.8rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+    background: #f8fbff;
+    font-weight: 600;
+}
+
+.login-wrap {
+    max-width: 420px;
+    margin: 3.2rem auto;
+}
+
+.form-group {
+    margin-bottom: 0.9rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+input {
+    width: 100%;
+    padding: 0.62rem 0.72rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 760px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .image-container {
+        margin: 0 auto;
+    }
+}
